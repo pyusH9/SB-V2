@@ -7,8 +7,8 @@
 }
 
 body {
-    background-color: #f5f0e6; /* Beige */
-    color: #111; /* Black text */
+    background-color: #f5f0e6; /* Light Beige */
+    color: #3b2f2f; /* Dark Brown for text */
     line-height: 1.6;
     scroll-behavior: smooth;
 }
@@ -20,8 +20,8 @@ a {
 
 /* Header */
 header {
-    background-color: #111;
-    color: #f5f0e6;
+    background-color: #a97457; /* Warm Brown / Caramel */
+    color: #fff7ec; /* Cream / Off-White */
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
@@ -39,7 +39,7 @@ header nav a {
 }
 
 header nav a:hover {
-    color: #c0a878;
+    color: #f4cda5; /* Soft Peach / Apricot */
 }
 
 /* Hero Section */
@@ -49,7 +49,7 @@ header nav a:hover {
     justify-content: center;
     align-items: center;
     height: 90vh;
-    background: linear-gradient(rgba(245,240,230,0.9), rgba(245,240,230,0.9)), url('../images/hero.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(245,240,230,0.95), rgba(245,240,230,0.95)), url('../images/hero.jpg') center/cover no-repeat;
     text-align: center;
     animation: fadeIn 1.5s ease-in-out;
 }
@@ -57,24 +57,26 @@ header nav a:hover {
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+    color: #5b3a29; /* Deep Warm Brown */
 }
 
 .hero p {
     font-size: 1.5rem;
+    color: #3b2f2f; /* Dark Brown */
 }
 
 .btn {
     display: inline-block;
     padding: 0.6rem 1.2rem;
-    background-color: #111;
-    color: #f5f0e6;
+    background-color: #f4cda5; /* Soft Peach */
+    color: #3b2f2f; /* Dark Brown */
     border-radius: 6px;
     margin-top: 1rem;
     transition: background 0.3s, transform 0.3s;
 }
 
 .btn:hover {
-    background-color: #c0a878;
+    background-color: #e2b88f; /* Slightly deeper Peach */
     transform: translateY(-3px);
 }
 
@@ -87,10 +89,10 @@ header nav a:hover {
 }
 
 .card {
-    background-color: #fff;
+    background-color: #fff7ec; /* Cream / Off-White */
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(91, 58, 41, 0.1); /* soft brown shadow */
     transition: transform 0.3s, box-shadow 0.3s, opacity 0.5s;
     opacity: 0; /* For fade-in scroll */
 }
@@ -102,17 +104,19 @@ header nav a:hover {
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 15px 25px rgba(91, 58, 41, 0.2);
 }
 
 .card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    filter: brightness(0.95);
 }
 
 .card-content {
     padding: 1rem;
+    color: #3b2f2f; /* Dark Brown text */
 }
 
 /* Forms */
@@ -126,10 +130,12 @@ form {
 
 input, textarea, select {
     padding: 0.8rem;
-    border: 1px solid #111;
+    border: 1px solid #a97457; /* Warm brown border */
     border-radius: 6px;
     font-family: inherit;
     resize: vertical;
+    background-color: #fff7ec; /* Cream background */
+    color: #3b2f2f;
 }
 
 textarea {
@@ -138,8 +144,8 @@ textarea {
 
 /* Footer */
 footer {
-    background-color: #111;
-    color: #f5f0e6;
+    background-color: #a97457; /* Warm Brown */
+    color: #fff7ec; /* Cream */
     text-align: center;
     padding: 2rem;
     margin-top: 2rem;
