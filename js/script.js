@@ -64,3 +64,38 @@ const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll
 faders.forEach(fader => {
   appearOnScroll.observe(fader);
 });
+
+// Full-page modal functionality
+const modal = document.getElementById('fullModal');
+const modalTitle = document.getElementById('modal-title');
+const modalImage = document.getElementById('modal-image');
+const modalText = document.getElementById('modal-text');
+const closeBtn = document.querySelector('.close');
+
+// Select all cards (poetries, stories, featured)
+const cards = document.querySelectorAll('.card');
+
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    const title = card.querySelector('h3').innerText;
+    const imgSrc = card.querySelector('img').src;
+    const text = card.querySelector('p').innerText;
+
+    modalTitle.innerText = title;
+    modalImage.src = imgSrc;
+    modalText.innerText = text;
+
+    modal.style.display = 'block';
+  });
+});
+
+// Close modal
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+// Close modal on clicking outside content
+window.addEventListener('click', e => {
+  if(e.target === modal) modal.style.display = 'none';
+});
+
