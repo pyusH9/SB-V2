@@ -17,3 +17,23 @@ const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll
 faders.forEach(fader => {
     appearOnScroll.observe(fader);
 });
+
+// Featured Carousel
+const track = document.querySelector('.carousel-track');
+const prevBtn = document.querySelector('.carousel-btn.prev');
+const nextBtn = document.querySelector('.carousel-btn.next');
+
+let index = 0;
+
+prevBtn.addEventListener('click', () => {
+    const cards = document.querySelectorAll('.carousel-card');
+    index = (index - 1 + cards.length) % cards.length;
+    track.style.transform = `translateX(-${index * 310}px)`;
+});
+
+nextBtn.addEventListener('click', () => {
+    const cards = document.querySelectorAll('.carousel-card');
+    index = (index + 1) % cards.length;
+    track.style.transform = `translateX(-${index * 310}px)`;
+});
+
