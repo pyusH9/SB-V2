@@ -18,22 +18,34 @@ faders.forEach(fader => {
     appearOnScroll.observe(fader);
 });
 
-// Featured Carousel
+// Featured Carousel with Autoplay
 const track = document.querySelector('.carousel-track');
+const cards = document.querySelectorAll('.carousel-card');
 const prevBtn = document.querySelector('.carousel-btn.prev');
 const nextBtn = document.querySelector('.carousel-btn.next');
 
 let index = 0;
+const cardWidth = 310; // card width + margin
+const totalCards = cards.length;
 
+// Function to move carousel
+function moveCarousel() {
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
+}
+
+// Prev/Next Buttons
 prevBtn.addEventListener('click', () => {
-    const cards = document.querySelectorAll('.carousel-card');
-    index = (index - 1 + cards.length) % cards.length;
-    track.style.transform = `translateX(-${index * 310}px)`;
+    index = (index - 1 + totalCards) % totalCards;
+    moveCarousel();
 });
 
 nextBtn.addEventListener('click', () => {
-    const cards = document.querySelectorAll('.carousel-card');
-    index = (index + 1) % cards.length;
-    track.style.transform = `translateX(-${index * 310}px)`;
+    index = (index + 1) % totalCards;
+    moveCarousel();
 });
 
+// Autoplay
+setInterval(() => {
+    index = (index + 1) % totalCards;
+    moveCarousel();
+}, 3000); // moves every 3 seconds
